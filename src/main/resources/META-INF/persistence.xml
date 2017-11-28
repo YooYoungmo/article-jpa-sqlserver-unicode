@@ -1,0 +1,20 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="article" transaction-type="RESOURCE_LOCAL">
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=test;" />
+            <property name="javax.persistence.jdbc.user" value="SA" />
+            <property name="javax.persistence.jdbc.password" value="yourStrong(!)Password" />
+            <property name="javax.persistence.lock.timeout" value="1000"/>
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect" />-->
+            <property name="hibernate.dialect" value="ymyoo.article.sqlserver.unicode.SQLServerUnicodeDialect" />
+
+            <property name="hibernate.show_sql" value="true" />
+            <property name="format_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="validate" />
+        </properties>
+    </persistence-unit>
+</persistence>
